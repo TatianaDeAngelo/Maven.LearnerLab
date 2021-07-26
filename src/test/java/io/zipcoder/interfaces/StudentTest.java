@@ -8,7 +8,7 @@ public class StudentTest {
     @Test
     public void implementationTest() {
         //Given
-        Student student = new Student(123456, "Tatiana");
+        Student student = new Student(123456, "Tatiana", 5);
 
         //When
 
