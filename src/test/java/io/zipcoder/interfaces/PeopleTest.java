@@ -11,7 +11,7 @@ public class PeopleTest {
     public void addPersonTest(){
     //Given
     List<Person> personList = new ArrayList<>();
-    Person person = new Person(123456, "Tatiana");
+    Person person = new Person(123456L, "Tatiana");
 
     //When
     personList.add(person);
@@ -26,7 +26,7 @@ public class PeopleTest {
     public void removePersonTest(){
         //Given
         List<Person> personList = new ArrayList<>();
-        Person person = new Person(123456, "Tatiana");
+        Person person = new Person(123456L, "Tatiana");
 
         //When
         personList.remove(person);
@@ -40,12 +40,12 @@ public class PeopleTest {
     @Test
     public void findPersonByIdTest(){
         //Given
-        Person person = new Person(123456, "Tatiana");
-        People people = new People();
+        Person person = new Person(123456L, "Tatiana");
+        People people = Students.getInstance();
 
         //When
         people.add(person);
-        Person actual = people.findById(123456);
+        Person actual = people.findById(123456L);
 
         //Then
         Assert.assertEquals(person, actual);

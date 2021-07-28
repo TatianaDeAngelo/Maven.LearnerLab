@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class People <E extends Person> implements Iterable <E> {
+public abstract class People <E extends Person> implements Iterable <E> {
 
     List<E> personList = new ArrayList<>();
 
@@ -13,9 +13,10 @@ public class People <E extends Person> implements Iterable <E> {
         personList.add(person);
     }
 
-    public E findById(long id) {
+    public E findById(Long id) {
         for (E person : personList){
-            if (person.getId() == id){
+            Long currentId = person.getId();
+            if (currentId.equals(id)){
                 return person;
             }
         }
@@ -35,9 +36,10 @@ public class People <E extends Person> implements Iterable <E> {
         personList.remove(person);
     }
 
-    public void remove (long id) {
+    public void remove (Long id) {
         for (E person : personList) {
-            if (person.getId() == id) {
+            Long currentId = person.getId();
+            if (currentId.equals(id)) {
                 personList.remove(person);
             }
         }
@@ -51,11 +53,10 @@ public class People <E extends Person> implements Iterable <E> {
         return personList.size();
     }
 
-    public Person[] toArray(){
-        return personList.toArray(new Person[0]);
-    }
 
+    public abstract E[] toArray();
 
+    @Override
     public Iterator<E> iterator() {
         return personList.iterator();
     }

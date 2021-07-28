@@ -2,7 +2,7 @@ package io.zipcoder.interfaces;
 
 public class Instructor extends Person implements Teacher {
 
-    public Instructor(long id, String name) {
+    public Instructor(Long id, String name) {
         super(id, name);
     }
 
@@ -18,4 +18,5 @@ public class Instructor extends Person implements Teacher {
             learner.learn(numberOfHoursPerLearner);
         }
     }
+
 }

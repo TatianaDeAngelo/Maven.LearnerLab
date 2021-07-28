@@ -12,7 +12,7 @@ public class TestPerson {
         //Given
         long expectedId = 123456;
         String expectedName = "Tatiana";
-        Person tatiana = new Person (123456, "Tatiana");
+        Person tatiana = new Person (123456L, "Tatiana");
 
         //When
         long actualId = tatiana.getId();
